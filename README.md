@@ -1,5 +1,18 @@
 # todo application
 
+# **This project is demo purpose only**
+
+# TODO  App
+Todo app is a fictitious app to add your daily todo things
+
+There’s never been a better time to be a developer. Our intent with these set of reference apps is to show developers how to get started with reactjs,node js and build the apps of the future, today!
+
+# Application Diagram
+
+<p align="center">
+<img src="architecture.png"/>
+</p>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
