@@ -27,6 +27,18 @@
 .App-link {
   color: #61dafb;
 }
+.App-Left {
+  width: 200px;
+}
+.Header {
+  height: 90px;
+  display: flex;
+  font-size: 30px;
+  font-weight: 300;
+  align-items: center;
+  justify-content: center;
+  background-color: skyblue;
+}
 
 @keyframes App-logo-spin {
   from {

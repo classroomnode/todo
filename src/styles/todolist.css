@@ -1,0 +1,19 @@
+.todo-list {
+  display: flex;
+  min-height: 200px;
+  flex-direction: column;
+  margin-top: 4px;
+}
+
+.todo-list > table > tbody > tr {
+  background: transparent !important;
+  border-bottom: 1px solid gray;
+  height: 60px;
+  font-size: 16px;
+  font-weight: normal !important;
+}
+.todo-list > table > tbody > tr > th {
+  width: 200px;
+  background: rgb(185, 226, 241);
+  border-bottom: 0px solid transparent;
+}
