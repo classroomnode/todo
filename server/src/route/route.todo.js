@@ -1,9 +1,7 @@
 const express = require("express");
 const router = express.Router();
 let todos = [];
-router.get("/", function(req, res) {
-  res.json("Get all customer.");
-});
+
 router.get("/todo", function(req, res) {
   let query = req.query.text;
   todos.push({
@@ -20,16 +18,4 @@ router.get("/todos", function(req, res) {
     todos: todos
   });
 });
-router.post("/", function(req, res) {
-  res.json("Saved the customer.");
-});
-
-router.put("/:id", function(req, res) {
-  res.json(`Updated customer ${req.params.id}`);
-});
-
-router.delete("/:id", function(req, res) {
-  res.json(`Deleted customer ${req.params.id}`);
-});
-
 module.exports = router;
