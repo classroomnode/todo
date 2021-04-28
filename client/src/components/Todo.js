@@ -12,7 +12,8 @@ function Todo() {
 
   //call all todos
   useEffect(() => {
-    let url = "http://localhost:8080/api/todos";
+    let url =
+      "https://todo-backend-dot-ingka-salja-web-dev.ew.r.appspot.com/api/todos";
     fetch(url)
       .then(data => data.json())
       .then(result => {
@@ -25,7 +26,7 @@ function Todo() {
   //adds a todo
   useEffect(() => {
     if (value !== "") {
-      let url = `http://localhost:8080/api/todo?text=${value}`;
+      let url = `https://todo-backend-dot-ingka-salja-web-dev.ew.r.appspot.com/api/todo?text=${value}`;
       fetch(url)
         .then(data => data.json())
         .then(result => {
