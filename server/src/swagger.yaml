@@ -1,0 +1,57 @@
+swagger: "2.0"
+info:
+  title: todo api endpoints
+  description: todo APIEndpoints
+  version: 1.0.0
+host: todo-backend-dot-ingka-salja-web-dev.ew.r.appspot.com/
+schemes:
+  - https
+produces:
+  - application/json
+paths:
+  "/api/todo?text=hi":
+    get:
+      summary: add todo
+      operationId: add todo
+      produces:
+        - application/json
+      parameter:
+        - in: query
+          name: text
+          required: true
+          type: string
+      responses:
+        "200":
+          description: A successful response
+          schema:
+            $ref: "#/definitions/todoResponse"
+  "/api/todos":
+    get:
+      summary: get all todo's
+      operationId: get todos
+      responses:
+        "200":
+          description: A successful response
+          schema:
+            $ref: "#/definitions/todosResponse"
+definitions:
+  todoResponse:
+    type: object
+    properties:
+      value:
+        type: string
+  todosResponse:
+    type: object
+    properties:
+      todos:
+        type: array
+        $ref: "#/definitions/todoItem"
+  todoItem:
+    type: object
+    properties:
+      name:
+        type: string
+      id:
+        type: string
+      date:
+        type: string
