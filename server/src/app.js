@@ -9,7 +9,6 @@ const YAML = require("yamljs");
 const swaggerDocument = YAML.load(path.join(__dirname, "/swagger.yaml"));
 const swaggerJsDoc = require("swagger-jsdoc");
 app.use(express.json());
-
 app.use(cors());
 app.use("/api/", todoRouter);
 const options = {

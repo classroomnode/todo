@@ -1,5 +1,7 @@
 runtime: nodejs12
-service: todo-backend
+service: todo-api
+instance_class: F4_1G
+
 handlers:
   - url: /.*
     script: auto

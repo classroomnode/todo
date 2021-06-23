@@ -1,0 +1,44 @@
+name: Deploy service
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - "**/*.md"
+      - "**/*.gitignore"
+      - "**/*.gitattributes"
+      - "**/translations.yaml"
+  workflow_dispatch:
+    branches:
+      - master
+    paths-ignore:
+      - "**/*.md"
+      - "**/*.gitignore"
+      - "**/*.gitattributes"
+
+env:
+  NODE_VERSION: 12.x
+  CI: true
+  GCP_APPLICATION: cartservices
+  GCP_IMG_PROJECT: ingka-sp-saljapro-cicd
+jobs:
+  development:
+    name: Deploy to development
+    environment:
+      name: development
+    runs-on: ubuntu-latest
+    env:
+      NODE_VERSION: 12.x
+      CI: true
+      GCP_PROJECT: api-5141905434732799880-799674
+
+    steps:
+      # Setup gcloud CLI
+      - uses: google-github-actions/setup-gcloud@master
+        with:
+          service_account_key: ${{ secrets.GCP_DEPLOY_CREDENTIALS }}
+          export_default_credentials: true
+
+      - name: Deploy
+        run: |
+          gcloud app deploy app.yaml --quiet
